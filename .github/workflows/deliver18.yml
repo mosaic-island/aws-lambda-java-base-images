@@ -1,6 +1,7 @@
 name: deliver18
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - release/18
@@ -31,7 +32,7 @@ jobs:
         uses: aws-actions/configure-aws-credentials@v1
         with:
           role-to-assume: arn:aws:iam::${{ secrets.CD_AWS_ACCOUNT_ID }}:role/GitHubRole
-          aws-region: us-east-1
+          aws-region: eu-west-1
       - name: Login to Amazon ECR Public
         uses: aws-actions/amazon-ecr-login@v1
         with:
