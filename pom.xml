@@ -61,7 +61,6 @@ under the License.
     <properties>
         <java.version>18</java.version>
         <java.revision>${project.version}</java.revision>
-        <aws.registry>aleph0io</aws.registry>
         <os.platform>al2</os.platform>
     </properties>
 
@@ -71,9 +70,21 @@ under the License.
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-dependency-plugin</artifactId>
                 <version>3.3.0</version>
-                <configuration>
-                    <outputDirectory>${project.build.directory}/dependencies</outputDirectory>
-                </configuration>
+                <executions>
+                    <execution>
+                        <id>copy-dependencies</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>copy-dependencies</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>${project.build.directory}/dependencies</outputDirectory>
+                            <overWriteReleases>false</overWriteReleases>
+                            <overWriteSnapshots>false</overWriteSnapshots>
+                            <overWriteIfNewer>true</overWriteIfNewer>
+                        </configuration>
+                    </execution>
+                </executions>
             </plugin>
             <plugin>
                 <groupId>io.fabric8</groupId>
@@ -116,7 +127,7 @@ under the License.
                                     <os.platform>${os.platform}</os.platform>
                                 </labels>
                             </build>
-                            <name>public.ecr.aws/${aws.registry}/lambda/java</name>
+                            <name>954923437464.dkr.ecr.eu-west-1.amazonaws.com/base-java-lambda</name>
                         </image>
                     </images>
                 </configuration>
