@@ -29,7 +29,7 @@ RUN yum clean all
 RUN rm -rf /var/cache/yum
 
 # Copy the source code and build
-COPY . /app
+COPY . /app/
 WORKDIR /app
 RUN ./mvnw package
 

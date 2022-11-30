@@ -48,6 +48,11 @@ under the License.
 
     <developers>
         <developer>
+            <name>Gareth Powell</name>
+            <email>gareth.powell@mosaicisland.co.uk</email>
+        </developer>
+        <developer>
+            <!-- Originator -->
             <name>Andy Boothe</name>
             <email>andy.boothe@gmail.com</email>
         </developer>
@@ -55,7 +60,7 @@ under the License.
 
     <issueManagement>
         <system>GitHub</system>
-        <url>https://github.com/aleph0io/aws-lambda-java-base-images</url>
+        <url>https://github.com/mosaic-island/aws-lambda-java-base-images</url>
     </issueManagement>
 
     <properties>
@@ -71,58 +76,22 @@ under the License.
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-dependency-plugin</artifactId>
                 <version>3.3.0</version>
-                <configuration>
-                    <outputDirectory>${project.build.directory}/dependencies</outputDirectory>
-                </configuration>
-            </plugin>
-<!--
-            <plugin>
-                <groupId>io.fabric8</groupId>
-                <artifactId>docker-maven-plugin</artifactId>
-                <version>0.40.2</version>
                 <executions>
                     <execution>
-                        <id>docker-build</id>
-                        <goals>
-                            <goal>build</goal>
-                        </goals>
+                        <id>copy-dependencies</id>
                         <phase>package</phase>
-                    </execution>
-                    <execution>
-                        <id>docker-push</id>
                         <goals>
-                            <goal>push</goal>
+                            <goal>copy-dependencies</goal>
                         </goals>
-                        <phase>deploy</phase>
+                        <configuration>
+                            <outputDirectory>${project.build.directory}/dependencies</outputDirectory>
+                            <overWriteReleases>false</overWriteReleases>
+                            <overWriteSnapshots>false</overWriteSnapshots>
+                            <overWriteIfNewer>true</overWriteIfNewer>
+                        </configuration>
                     </execution>
                 </executions>
-                <configuration>
-                    <images>
-                        <image>
-                            <build>
-                                <dockerFileDir>${project.basedir}</dockerFileDir>
-                                <args>
-                                    <JAVA_VERSION>${java.version}</JAVA_VERSION>
-                                    <JAVA_REVISION>${java.revision}</JAVA_REVISION>
-                                </args>
-                                <tags>
-                                    <tag>${java.version}</tag>
-                                    <tag>${java.version}-${os.platform}</tag>
-                                    <tag>${java.revision}</tag>
-                                    <tag>${java.revision}-${os.platform}</tag>
-                                </tags>
-                                <labels>
-                                    <java.version>${java.version}</java.version>
-                                    <java.revision>${java.revision}</java.revision>
-                                    <os.platform>${os.platform}</os.platform>
-                                </labels>
-                            </build>
-                            <name>public.ecr.aws/${aws.registry}/lambda/java</name>
-                        </image>
-                    </images>
-                </configuration>
             </plugin>
--->
         </plugins>
     </build>
 
@@ -130,7 +99,7 @@ under the License.
         <dependency>
             <groupId>com.amazonaws</groupId>
             <artifactId>aws-lambda-java-core</artifactId>
-            <version>1.2.1</version>
+            <version>1.2.2</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
