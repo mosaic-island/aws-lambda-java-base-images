@@ -1,4 +1,4 @@
-# AWS Lambda Java Base Images
+# AWS Lambda Java Base Images (this is a fork of https://github.com/aleph0io/aws-lambda-java-base-images)
 
 This project provides the missing [AWS Lambda base image](https://docs.aws.amazon.com/lambda/latest/dg/runtimes-images.html) for Java 17. The base images are publicly available [in the ECR Public Gallery](https://gallery.ecr.aws/aleph0io/lambda/java). You should be able to use them directly in your builds. I expect to use these base images for production lambda functions reasonably soon, but in the meantime please consider them to be *very experimental*.
 
