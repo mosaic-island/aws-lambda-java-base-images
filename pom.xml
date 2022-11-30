@@ -55,7 +55,7 @@ under the License.
 
     <issueManagement>
         <system>GitHub</system>
-        <url>https://github.com/sigpwned/aws-lambda-java-base-images</url>
+        <url>https://github.com/aleph0io/aws-lambda-java-base-images</url>
     </issueManagement>
 
     <properties>
@@ -75,6 +75,7 @@ under the License.
                     <outputDirectory>${project.build.directory}/dependencies</outputDirectory>
                 </configuration>
             </plugin>
+<!--
             <plugin>
                 <groupId>io.fabric8</groupId>
                 <artifactId>docker-maven-plugin</artifactId>
@@ -121,6 +122,7 @@ under the License.
                     </images>
                 </configuration>
             </plugin>
+-->
         </plugins>
     </build>
 
