@@ -20,19 +20,14 @@ ARG JAVA_REVISION=19.0.1
 
 FROM public.ecr.aws/amazoncorretto/amazoncorretto:${JAVA_VERSION}-amd64 as builder
 
-#RUN touch /var/lib/rpm/*
 RUN yum clean all
-#RUN yum -y update
-#RUN yum install -y wget tar gzip bzip2-devel ed gcc gcc-c++ gcc-gfortran \
-#    less libcurl-devel openssl openssl-devel readline-devel xz-devel \
-#    zlib-devel glibc-static libcxx libcxx-devel llvm-toolset-7 zlib-static
+RUN yum -y update
 RUN rm -rf /var/cache/yum
 
 # Copy the source code and build
 COPY . /app/
 WORKDIR /app
 RUN ./mvnw package
-
 
 FROM public.ecr.aws/amazoncorretto/amazoncorretto:${JAVA_VERSION}-amd64
 
