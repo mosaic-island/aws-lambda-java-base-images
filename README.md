@@ -43,7 +43,7 @@ Lambda container of the class and function used as the entrypoint to the Lambda.
     COPY --from=lambda-builder /app/build/dependency/* ${LAMBDA_TASK_ROOT}/lib/
     COPY --from=lambda-builder /app/build/resources/* ${LAMBDA_TASK_ROOT}/
     
-    ENV LAMBDA_HANDLER="uk.co.mosaicisland.apihub.LambdaHandler::handleRequest"
+    ENV LAMBDA_HANDLER="com.example.aws.LambdaHandler::handleRequest"
 
 ## Known Issues and Future Plans
 
