@@ -19,24 +19,24 @@ under the License.
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.sigpwned</groupId>
+    <groupId>co.uk.mosaicisland</groupId>
     <artifactId>aws-lambda-java-base-images</artifactId>
-    <version>17.0.4</version>
+    <version>17.0.5</version>
     <name>aws-lambda-java-base-images</name>
     <inceptionYear>2022</inceptionYear>
     <description>AWS Lambda Base Image for Java 17+</description>
-    <url>https://github.com/sigpwned/aws-lambda-java-base-images</url>
+    <url>https://github.com/mosaic-island/aws-lambda-java-base-images</url>
     <packaging>jar</packaging>
 
     <organization>
-        <name>Andy Boothe</name>
-        <url>https://www.sigpwned.com/</url>
+        <name>Mosaic Island Limited</name>
+        <url>https://www.mosaicisland.co.uk/</url>
     </organization>
 
     <scm>
-        <connection>scm:git:ssh://git@github.com/sigpwned/aws-lambda-java-base-images.git</connection>
-        <developerConnection>scm:git:ssh://git@github.com/sigpwned/aws-lambda-java-base-images.git</developerConnection>
-        <url>https://github.com/sigpwned/aws-lambda-java-base-images/tree/main</url>
+        <connection>scm:git:ssh://git@github.com/mosaic-island/aws-lambda-java-base-images.git</connection>
+        <developerConnection>scm:git:ssh://git@github.com/mosaic-island/aws-lambda-java-base-images.git</developerConnection>
+        <url>https://github.com/mosaic-island/aws-lambda-java-base-images/tree/main</url>
     </scm>
 
     <licenses>
@@ -48,6 +48,7 @@ under the License.
 
     <developers>
         <developer>
+            <!-- Now maintained by @ Mosaic Island -->
             <name>Gareth Powell</name>
             <email>gareth.powell@mosaicisland.co.uk</email>
         </developer>
@@ -75,7 +76,7 @@ under the License.
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-dependency-plugin</artifactId>
-                <version>3.3.0</version>
+                <version>3.4.0</version>
                 <executions>
                     <execution>
                         <id>copy-dependencies</id>
@@ -105,7 +106,7 @@ under the License.
         <dependency>
             <groupId>com.amazonaws</groupId>
             <artifactId>aws-lambda-java-serialization</artifactId>
-            <version>1.0.0</version>
+            <version>1.0.1</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
