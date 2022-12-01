@@ -7,7 +7,7 @@ They are based on the project (https://github.com/aleph0io/aws-lambda-java-base-
 Amazon provided base images in ECR/Docker Hub.
 
 
-This project provides the missing [AWS Lambda base image](https://docs.aws.amazon.com/lambda/latest/dg/runtimes-images.html) for Java 17 and 18. The base images are publicly available [in the ECR Public Gallery](https://gallery.ecr.aws/aleph0io/lambda/java). You should be able to use them directly in your builds. I expect to use these base images for production lambda functions reasonably soon, but in the meantime please consider them to be *very experimental*.
+This project provides the missing [AWS Lambda base image](https://docs.aws.amazon.com/lambda/latest/dg/runtimes-images.html) for Java 17, 18 & 19. The base images are publicly available in [Docker Hub](https://hub.docker.com/r/miapplicationengineering/jvm-lambda-base). We will be using them directly in our builds. They should be considered *very experimental*, and we do not provide any guarantees or support. Use at own risk.
 
 ## Approach
 
